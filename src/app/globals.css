@@ -5,6 +5,35 @@
   --foreground: #171717;
 }
 
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(55vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+.google-sans {
+  font-family: "Google Sans Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400; /* adjust 300–800 as needed */
+  font-style: normal;
+}
+
+
+.leaf {
+  animation: fall linear 1 forwards;
+  position: absolute;
+  pointer-events: auto;
+  cursor: url("/mouse.png") 72 72, auto;
+}
+
+.leaf:hover {
+  cursor: url("/mouse_hover.png") 72 72, pointer; /* when hovered */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -20,7 +49,14 @@
 }
 
 body {
+  cursor: url("/mouse.png") 72 72, auto;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  cursor: url("/mouse.png") 72 72, auto ;
+}
+a, button, [role="button"] {
+  cursor: url("/mouse_hover.png") 72 72 , pointer;
 }
