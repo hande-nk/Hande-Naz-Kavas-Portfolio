@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useEffect, useRef } from 'react';
 //Imports Next/React utilities and hooks
 import { useState } from "react";
+import SnakeGameLauncher from "@/app/components/SnakeGame";
+
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,6 +96,8 @@ export default function Home() {
     className="min-h-screen bg-black text-white p-10 overflow-hidden"
     >
       <section className="flex flex-col items-center text-center my-16">
+        
+
         <div className="relative w-40 h-40 rounded-full overflow-hidden mb-6">
           <Image
             src="/me.jpg"
@@ -104,16 +108,36 @@ export default function Home() {
           </div>
           <h1 className="text-4xl font-bold">Hande Naz Kavas</h1>
           <p className="mt-4 max-w-2xl text-lg">
-            Computer Science student passionate about brain-computer interfaces, AI, sustainability, and software engineering. Building systems that merge neuroscience and computation, and writingabout emerging technology.
+            Computer Science student passionate about brain-computer interfaces, AI, sustainability, and software engineering. Building systems that merge neuroscience and computation, and writing about emerging technology.
           </p>
           
           
       </section>
-      <section>
-        <div className="relative w-100 h-10 text-gray-300 text-xl text-left">
-            <p> hande_naz.kavas@tuft.edu</p>
-          </div>
+      <section className="flex flex-wrap items-center justify-between gap-4">
+        {/* Email */}
+        <a
+          href="mailto:hande_naz.kavas@tufts.edu"
+          className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+        >
+          {/* Simple envelope icon using text – you can replace with an SVG/Icon later */}
+          <span className="text-lg">✉️</span>
+          <span>hande_naz.kavas@tufts.edu</span>
+        </a>
+        {/*snake game */}
+        <div className="mt-6">
+        <SnakeGameLauncher />
+       </div>
+        {/* Resume button */}
+        <Link
+          href="/resume"
+          className="inline-flex items-center gap-2 rounded-full border border-gray-500 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-100 hover:text-black transition-colors"
+        >
+          <span>View résumé</span>
+          <span className="text-xs">↗</span>
+        </Link>
       </section>
+
+
       
 
       <section className="my-20">
@@ -148,7 +172,7 @@ export default function Home() {
             </p>
           </Link> */}
 
-          <Link href="#" className="border rounded-xl p-6 hover:shadow-lg">
+          <Link href="http://gonullubul.com" className="border rounded-xl p-6 hover:shadow-lg">
             <h3 className="text-xl font-semibold mb-2">Gonullubul</h3>
             <p>
             MERN volunteering platform connecting NGOs with youth communities.
@@ -192,131 +216,296 @@ export default function Home() {
       )}
 
       <section className="my-20">
-        <h2 className="text-3xl font-bold mb-6">Articles</h2>
-        <div className="flex flex-col md:flex-row items-start gap-8">
-         
-          <ul className="md:w-1/2 w-full space-y-4">
-            <li>
-              <Link href="https://pub.aimind.so/decrypting-words-using-muse-2-c3a3da632219" className="underline hover:text-gray-600">
-              Decrypting Words Using Muse-2
-              </Link>
-              <p className="text-s font-thin italic">
-                Published in AI Mind
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/gitconnected/fooling-autonomous-cars-via-white-box-attacks-2774174c478e" className="underline hover:text-gray-600">
-              Fooling Autonomous Cars Via White Box Attacks
-              </Link>
-              <p className="text-s font-thin italic">
-                Published in Level Up Coding
-              </p>
-            </li>
-            <li>
-              <Link href="https://www.tuftsdaily.com/article/2025/10/accessible-low-cost-biomedical-innovations-at-tufts-research-lab" className="underline hover:text-gray-600">
-              Accessible, low-cost biomedical innovations at Tufts’ research lab
-              </Link>
-              <p className="text-s font-thin italic">
-                Published in Tufts Daily
-              </p>
-            </li>
-            <li>
-              <Link href="https://www.tuftsdaily.com/article/2025/09/keeping-inner-thoughts-private" className="underline hover:text-gray-600">
-              Keeping inner thoughts ‘private’
-              </Link>
-              <p className="text-s font-thin italic">
-                Published in Tufts Daily
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/merging-synapses/what-is-optogenetics-c7f7ae296494" className="underline hover:text-gray-600">
-              What is Optogenetics?
-              </Link>
-              <p className="text-s font-thin italic">
-                Published in Merging Synapses
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/merging-synapses/technical-review-of-bci-part-1-fnirs-76711bf5a32f" className="underline hover:text-gray-600">
-              Technical Review of BCI — Part 1: fNIRS
-              </Link>
-              <p className="text-s font-thin italic">
-                Published in Merging Synapses
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/figure-3-0-would-you-like-a-robot-maid-1a338b07d066" className="underline hover:text-gray-600">
-              Figure 3.0 — Would you like a ‘Robot Maid’?
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/thought-communications-decoding-inner-speech-80cbae2fcba5" className="underline hover:text-gray-600">
-              Thought Communications: Decoding Inner Speech
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/can-code-replace-the-human-body-neuroprosthetics-92c05578e824" className="underline hover:text-gray-600">
-              Can code replace the human body? — Neuroprosthetics
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/breaking-with-the-past-how-knowledge-benefits-from-letting-go-801667dc0930" className="underline hover:text-gray-600">
-              Breaking with the Past: How Knowledge Benefits from Letting Go
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/how-i-used-vector-math-and-trigonometry-to-plan-a-real-life-transatlantic-sailing-trip-a3892f48c495" className="underline hover:text-gray-600">
-              How I Used Vector Math and Trigonometry to Plan a Real-Life Transatlantic Sailing Trip
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/understanding-the-vulnerabilities-of-ai-systems-661ae7e43a13" className="underline hover:text-gray-600">
-              Adversarial Attacks and CNN Manipulations: Understanding the Vulnerabilities of AI Systems
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-            <li>
-              <Link href="https://medium.com/@handenazkavas/what-are-brain-computer-interfaces-e485a2284652" className="underline hover:text-gray-600">
-              What are Brain-Computer Interfaces
-              </Link>
-              <p className="text-s font-thin italic">
-                self published
-              </p>
-            </li>
-
-
-
-          </ul>
-        <div className="md:w-1/2 w-full">
-          <Image 
-            src="/placeholder.jpeg"
-            alt="Art by me"
-            width={600}
-            height={400}
-            className="rounded-xl object-cover shadow-lg"
-          />
-        </div>
+        <div className="mb-6 flex items-baseline justify-between">
+          <h2 className="text-3xl font-bold">Articles</h2>
+          <p className="text-xs uppercase tracking-wide text-gray-500">
+            13+ published pieces
+          </p>
         </div>
 
+        <div className="grid gap-4 md:grid-cols-2">
+          {/* 1 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://pub.aimind.so/decrypting-words-using-muse-2-c3a3da632219"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Decrypting Words Using Muse-2
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in AI Mind
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 2 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/gitconnected/fooling-autonomous-cars-via-white-box-attacks-2774174c478e"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Fooling Autonomous Cars Via White Box Attacks
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in Level Up Coding
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 3 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://www.tuftsdaily.com/article/2025/10/accessible-low-cost-biomedical-innovations-at-tufts-research-lab"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Accessible, low-cost biomedical innovations at Tufts’ research lab
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in Tufts Daily
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 4 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://www.tuftsdaily.com/article/2025/09/keeping-inner-thoughts-private"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Keeping inner thoughts ‘private’
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in Tufts Daily
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 5 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/merging-synapses/what-is-optogenetics-c7f7ae296494"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  What is Optogenetics?
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in Merging Synapses
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 6 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/merging-synapses/technical-review-of-bci-part-1-fnirs-76711bf5a32f"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Technical Review of BCI — Part 1: fNIRS
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in Merging Synapses
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 7 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/figure-3-0-would-you-like-a-robot-maid-1a338b07d066"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Figure 3.0 — Would you like a ‘Robot Maid’?
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 8 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/thought-communications-decoding-inner-speech-80cbae2fcba5"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Thought Communications: Decoding Inner Speech
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 9 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/can-code-replace-the-human-body-neuroprosthetics-92c05578e824"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Can code replace the human body? — Neuroprosthetics
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 10 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/breaking-with-the-past-how-knowledge-benefits-from-letting-go-801667dc0930"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Breaking with the Past: How Knowledge Benefits from Letting Go
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 11 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/how-i-used-vector-math-and-trigonometry-to-plan-a-real-life-transatlantic-sailing-trip-a3892f48c495"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  How I Used Vector Math and Trigonometry to Plan a Real-Life Transatlantic Sailing Trip
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 12 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/understanding-the-vulnerabilities-of-ai-systems-661ae7e43a13"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  Adversarial Attacks and CNN Manipulations: Understanding the Vulnerabilities of AI
+                  Systems
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+
+          {/* 13 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://medium.com/@handenazkavas/what-are-brain-computer-interfaces-e485a2284652"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  What are Brain-Computer Interfaces
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Self-published
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
+        </div>
       </section>
-     
+
+     <section className="border-t border-gray-900 pt-8 text-center space-y-3">
+        <p className="text-sm text-gray-300">
+          Even though most of it is human-made, Chat GPT 5.1 has been of help for debugging and designing this website. 
+        </p>
+       
+      </section>
 
     </main>
   )
