@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     siteName: "Hande Naz Kavas",
     images: [
       {
-        url: "/social-card.png", // must exist in /public
+        url: "https://https://hande-dnsj.vercel.app//social-card.png", // must exist in /public
         width: 1200,
         height: 630,
         alt: "Preview of Hande Naz Kavas’ portfolio website",
