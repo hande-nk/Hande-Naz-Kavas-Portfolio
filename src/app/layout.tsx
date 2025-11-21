@@ -4,6 +4,22 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Hande Naz Kavas",
   description: "Portfolio of Hande Naz Kavas",
+  openGraph: {
+    title: "Hande Naz Kavas | Portfolio",
+    description: "CS/EE projects, BCIs, sustainability & photography.",
+    siteName: "Hande Naz Kavas",
+    images: [
+      {
+        url: "/social-card.png", // must exist in /public
+        width: 1200,
+        height: 630,
+        alt: "Preview of Hande Naz Kavas’ portfolio website",
+      },
+    ],
+    type: "website",
+  },
+  // (optional, once you know your Vercel URL)
+  // metadataBase: new URL("https://YOUR-VERCEL-APP.vercel.app"),
 };
 
 export default function RootLayout({
