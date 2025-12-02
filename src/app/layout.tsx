@@ -1,5 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+
 
 export const metadata: Metadata = {
   title: "Hande Naz Kavas",
@@ -39,6 +41,8 @@ export default function RootLayout({
       </head>
       <body className="google-sans antialiased">
         {children}
+        <Analytics />
+
       </body>
     </html>
   );
