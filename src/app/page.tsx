@@ -224,6 +224,26 @@ export default function Home() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
+          {/* 0 */}
+          <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
+            <Link
+              href="https://www.tuftsdaily.com/article/2025/12/nextbrain-an-ai-powered-brain-atlas"
+              className="flex items-start justify-between gap-3"
+              target="_blank"
+            >
+              <div>
+                <h3 className="text-sm font-medium leading-snug group-hover:underline">
+                  NextBrain: An AI-powered brain atlas
+                </h3>
+                <p className="mt-1 inline-flex items-center rounded-full bg-gray-800/70 px-2 py-0.5 text-xs font-light italic text-gray-200">
+                  Published in Tufts Daily
+                </p>
+              </div>
+              <span className="mt-1 text-xs opacity-0 transition group-hover:opacity-100">
+                ↗
+              </span>
+            </Link>
+          </article>
           {/* 1 */}
           <article className="group rounded-xl border border-gray-800/60 bg-black/40 p-4 transition hover:border-gray-400/80 hover:bg-black/70">
             <Link
